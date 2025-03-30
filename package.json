@@ -18,8 +18,8 @@
     "next": "15.2.3",
     "next-auth": "^4.24.11",
     "pg": "^8.14.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.26.9",

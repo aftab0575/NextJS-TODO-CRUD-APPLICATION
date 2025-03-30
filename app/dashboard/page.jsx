@@ -1,8 +1,9 @@
 "use client";
+import React from 'react';
+
 import { useSession, signOut } from "next-auth/react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import React from 'react';
 
 export default function Dashboard() {
   const { data: session, status } = useSession();
