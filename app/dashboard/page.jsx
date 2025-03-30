@@ -1,8 +1,6 @@
 "use client";
-import React from 'react';
-
+import React, { useState, useEffect } from "react";
 import { useSession, signOut } from "next-auth/react";
-import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Dashboard() {
@@ -11,12 +9,15 @@ export default function Dashboard() {
   const [tasks, setTasks] = useState([]);
   const [task, setTask] = useState("");
 
+  // Use NEXT_PUBLIC_HOST for API calls
+  const API_URL = process.env.NEXT_PUBLIC_HOST || "";
+
   // Fetch Tasks
   useEffect(() => {
     if (!session) router.push("/authForm");
 
     async function fetchTasks() {
-      const res = await fetch("/api/todo");
+      const res = await fetch(`${API_URL}/api/todo`);
       if (res.ok) {
         const data = await res.json();
         setTasks(data);
@@ -25,19 +26,19 @@ export default function Dashboard() {
     fetchTasks();
   }, [session]);
 
-  //Add task 
+  // Add Task
   const addTask = async () => {
     if (!task.trim()) {
       alert("Task title cannot be empty!");
       return;
     }
-  
-    const res = await fetch("/api/todo", {
+
+    const res = await fetch(`${API_URL}/api/todo`, {
       method: "POST",
       body: JSON.stringify({ title: task }),
       headers: { "Content-Type": "application/json" },
     });
-  
+
     if (res.ok) {
       const newTask = await res.json();
       setTasks((prevTasks) => [...prevTasks, newTask]); // ✅ Update state correctly
@@ -47,13 +48,13 @@ export default function Dashboard() {
       alert(errorData.error || "Failed to add task");
     }
   };
-  
-  //Delete task
+
+  // Delete Task
   const deleteTask = async (id) => {
-    await fetch(`/api/todo/${id}`, { method: "DELETE" });
+    await fetch(`${API_URL}/api/todo/${id}`, { method: "DELETE" });
     setTasks(tasks.filter((task) => task.id !== id)); // Remove from UI instantly
   };
-
+  
   return session ? (
     <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow">
       <h2 className="text-2xl font-bold">Dashboard</h2>

@@ -1,7 +1,5 @@
 "use client";
-import React from "react";
-
-import { useState } from "react";
+import React, { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
@@ -12,17 +10,20 @@ export default function AuthForm() {
   const [password, setPassword] = useState("");
   const router = useRouter();
 
+  // Use NEXT_PUBLIC_HOST for API calls
+  const API_URL = process.env.NEXT_PUBLIC_HOST || "";
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (isRegister) {
       // Register User
-      const res = await fetch("/api/register", {
+      const res = await fetch(`${API_URL}/api/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password }),
       });
-  
+
       if (res.ok) {
         setIsRegister(false); // Switch to Sign In after successful registration
       } else {
@@ -36,7 +37,7 @@ export default function AuthForm() {
         email,
         password,
       });
-  
+
       if (!res.error) {
         router.push("/dashboard");
       } else {
@@ -44,6 +45,8 @@ export default function AuthForm() {
       }
     }
   };
+
+ 
   
 
   return (

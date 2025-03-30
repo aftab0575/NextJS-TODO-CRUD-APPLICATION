@@ -9,8 +9,11 @@ export default function EditTask() {
   const { id } = useParams();
   const [task, setTask] = useState("");
 
+  // Use NEXT_PUBLIC_HOST for API calls
+  const API_URL = process.env.NEXT_PUBLIC_HOST || "";
+
   const updateTask = async () => {
-    await fetch(`/api/todo/${id}`, {
+    await fetch(`${API_URL}/api/todo/${id}`, {
       method: "PUT",
       body: JSON.stringify({ title: task }),
       headers: { "Content-Type": "application/json" },
@@ -18,6 +21,7 @@ export default function EditTask() {
 
     router.push("/dashboard"); // Redirect after update
   };
+
 
   return (
     <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow">
