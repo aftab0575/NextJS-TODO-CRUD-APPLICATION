@@ -3,7 +3,7 @@
 A fully responsive and secure Todo Web App built with the Next.js App Router, integrated with authentication, PostgreSQL database, and protected routes.
 
 ## 🚀 Live Demo
-👉 [Click here to view the deployed application]([https://your-deployed-app-link.com](https://next-js-todo-crud-application.vercel.app))
+👉 [Click here to view the deployed application](https://next-js-todo-crud-application.vercel.app)
 
 ---
 
