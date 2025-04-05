@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node api.js && next dev",
     "build": "prisma generate && next build",
-    "start": "next start",
+    "start": "node api.js && next start",
     "test": "jest --watch",
     "lint": "next lint",
     "build:css": "tailwindcss -i ./src/globals.css -o ./dist/output.css --watch"
