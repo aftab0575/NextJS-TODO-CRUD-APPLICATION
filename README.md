@@ -36,13 +36,13 @@ A fully responsive and secure Todo Web App built with the Next.js App Router, in
 | Authentication   | NextAuth (Google + Credentials)      |
 | Database         | PostgreSQL with Prisma ORM           |
 | Testing          | Jest (unit + integration)            |
-| Deployment       | Vercel / Netlify / GCP               |
+| Deployment       | Vercel               |
 
 ---
 
 ## 📁 Folder Structure
 
-
+📦project-root ┣ 📂app ┣ 📂components ┣ 📂lib ┣ 📂prisma ┣ 📂public ┣ 📂styles ┣ 📂tests ┗ 📄
 
 ---
 
