@@ -1,3 +1,51 @@
+# 📝 Full-Stack Todo Web Application
+
+A fully responsive and secure Todo Web App built with the Next.js App Router, integrated with authentication, PostgreSQL database, and protected routes.
+
+## 🚀 Live Demo
+👉 [Click here to view the deployed application]([https://your-deployed-app-link.com](https://next-js-todo-crud-application.vercel.app))
+
+---
+
+## 📌 Features
+
+- 🔐 **Authentication**
+  - Sign in or Register using **Google OAuth** or **email & password** via **NextAuth**.
+  - Redirect to Dashboard upon successful login.
+
+- 📋 **Dashboard**
+  - Add new tasks without refreshing the page.
+  - View list of tasks with edit and delete options.
+  - Fully responsive for mobile, tablet, laptop, and desktop screens.
+
+- 🛠️ **Edit Tasks**
+  - Navigate to Edit Page to update tasks.
+  - Real-time UI updates after editing.
+
+- 🧱 **Protected Routes**
+  - Only accessible to authenticated users.
+
+---
+
+## 🧰 Tech Stack
+
+| Category          | Tools Used                          |
+|------------------|--------------------------------------|
+| Frontend         | Next.js (App Router), TailwindCSS, ShadCN UI |
+| Backend          | Next.js API Routes                   |
+| Authentication   | NextAuth (Google + Credentials)      |
+| Database         | PostgreSQL with Prisma ORM           |
+| Testing          | Jest (unit + integration)            |
+| Deployment       | Vercel / Netlify / GCP               |
+
+---
+
+## 📁 Folder Structure
+
+
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
